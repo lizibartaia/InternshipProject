@@ -54,7 +54,6 @@ export class PostsComponent implements AfterViewInit {
       this.dataSource.data = res;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(res);
     });
   }
 

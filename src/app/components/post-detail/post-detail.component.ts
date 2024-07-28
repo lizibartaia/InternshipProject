@@ -19,10 +19,7 @@ export class PostDetailComponent {
   userId!:number;
   userPost$!:Observable<IPost[]>;
 
-  constructor(private ListService: ListService,private activatedRoute: ActivatedRoute) {
-
-
-  }
+  constructor(private ListService: ListService,private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(){
     this.activatedRoute.paramMap.subscribe((queryParams)=>{
