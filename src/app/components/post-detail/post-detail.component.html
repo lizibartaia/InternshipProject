@@ -1,0 +1,47 @@
+<!-- <div *ngIf="userPost$ | async as posts">
+
+  @for(post of posts; track post) {
+
+    <div>
+      <h1>{{ post.id }}</h1>
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+    </div>
+  }
+
+</div>
+
+<mat-card appearance="outlined" *ngIf="userPost$ | async as posts">
+  @for(post of posts; track post) {
+
+    <mat-card-content>{{post.id}}</mat-card-content>
+    <mat-card-content>{{post.title}}</mat-card-content>
+    <mat-card-content>{{post.body}}</mat-card-content>
+  }
+  <mat-card-content *ngFor="let post of posts; index as i;">
+
+  <mat-card-content>{{post.id}}</mat-card-content>
+  <mat-card-content>{{post.title}}</mat-card-content>
+  <br>
+  <mat-card-content>{{post.body}}</mat-card-content>
+
+</mat-card-content>
+
+</mat-card>
+ -->
+
+
+  @if (userPost$ | async; as posts) {
+<mat-card class="example-card" appearance="outlined" *ngFor="let post of posts">
+  <mat-card-header>
+    <mat-card-title>postId:{{post.id}}</mat-card-title>
+    <mat-card-title>userId:{{post.userId}}</mat-card-title>
+    <mat-card-title>{{post.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{post.body}}</p>
+  </mat-card-content>
+  <mat-card-footer class="example-card-footer">
+  </mat-card-footer>
+</mat-card>
+}

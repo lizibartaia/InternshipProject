@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.content {
+  width: 80%;
+  margin: 0 auto; /* Center the content horizontally */
+  padding: 16px; /* Optional: Add some padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Media query for screens 1024px and above */
+@media (min-width: 1024px) {
+  .content {
+    width: 50%;
+  }
+}
