@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from "./components/footer/footer.component";
 
@@ -16,6 +16,8 @@ export class AppComponent {
 
 
   constructor() {}
+
+
 
 
 

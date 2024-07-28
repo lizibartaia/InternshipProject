@@ -3,7 +3,6 @@ import { ListService } from '../../services/list.service';
 import { IPost } from '../../interfaces/ipost';
 import { CommonModule, NgFor} from '@angular/common';
 import { Observable } from 'rxjs';
-import { TableComponent } from '../../shared/table/table.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule, MatButton } from '@angular/material/button';
@@ -11,7 +10,6 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { SearchPipe } from '../../pipes/search.pipe';
 import { DialogComponent } from '../../shared/dialog/dialog.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import {
   MatDialog,
@@ -50,11 +48,6 @@ export class PostsComponent implements AfterViewInit {
   constructor(private ListService: ListService){}
 
   ngOnInit(){
-    // this.posts$ = this.ListService.getPosts();
-    // this.posts$.subscribe((res)=>{
-    //   console.log(res);
-    // })
-
 
     this.posts$ = this.ListService.getPostsWithUsernames();
     this.posts$.subscribe((res) => {

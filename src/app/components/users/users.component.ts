@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { SearchPipe } from "../../pipes/search.pipe";
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-//import { BrowserModule } from '@angular/platform-browser';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table'
 import { CommonModule } from '@angular/common';

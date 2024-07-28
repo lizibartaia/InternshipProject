@@ -1,135 +1,3 @@
-<!--
-<div class="mat-elevation-z8">
-  <table *ngIf="users$ | async as users" [dataSource]="users" mat-table matSort>
-
-  < @for (item of displayedColumns; track item) {
-
-    <ng-container matColumnDef={{item}}>
-      <th mat-header-cell *matHeaderCellDef mat-sort-header=> {{item}} </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
-
-  }
-
-  <ng-container matColumnDef="Name">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header="name"> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Username">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header="username"> Username </th>
-    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Phone">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header="phone"> Phone </th>
-    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Email">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header="body"> Email </th>
-    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Company">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header="company"> Company </th>
-    <td mat-cell *matCellDef="let element"> {{element.company.name}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Posts">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header="posts"> Posts </th>
-    <button mat-stroked-button>POSTS</button>
-    <button>posts</button>
-  </ng-container>
-
-  <ng-container matColumnDef="post">
-    <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-icon-button (click)="onPostClicked(element.id)">
-        <span class="font">post</span>
-      </button>
-    </td>
-  </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns; "></tr>
-
-
-
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "</td>
-    </tr>
-  </table>
-
-
-</div>
-
-<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-
-
-
----------
-
-
-<mat-form-field>
-  <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-</mat-form-field>
-
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="(users$ | async) ?? []" matSort>
-
-
-    <ng-container matColumnDef="Name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-      <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="Username">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
-      <td mat-cell *matCellDef="let row"> {{row.username}}% </td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="Phone">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
-      <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="Email">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-      <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-    </ng-container>
-
-
-
-    <ng-container matColumnDef="Company">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
-      <td mat-cell *matCellDef="let row"> {{row.company.name}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="post">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let row">
-        <button mat-icon-button (click)="onPostClicked(row.id)">
-          <span class="font">post</span>
-        </button>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-
-    <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-    </tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
-</div> -->
 
 <mat-form-field>
   <mat-label>Filter</mat-label>
@@ -139,32 +7,31 @@
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
 
-    <!-- ID Column -->
     <ng-container matColumnDef="Name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
       <td mat-cell *matCellDef="let row"> {{row.name}} </td>
     </ng-container>
 
-    <!-- Progress Column -->
+
     <ng-container matColumnDef="Username">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Username </th>
       <td mat-cell *matCellDef="let row"> {{row.username}}% </td>
     </ng-container>
 
-    <!-- Name Column -->
+
     <ng-container matColumnDef="Phone">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
       <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
     </ng-container>
 
-    <!-- Fruit Column -->
+
     <ng-container matColumnDef="Email">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
       <td mat-cell *matCellDef="let row"> {{row.email}} </td>
     </ng-container>
 
 
-    <!-- Fruit Column -->
+
     <ng-container matColumnDef="Company">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
       <td mat-cell *matCellDef="let row"> {{row.company.name}} </td>
@@ -191,7 +58,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-    <!-- Row shown when there is no matching data. -->
     <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
     </tr>

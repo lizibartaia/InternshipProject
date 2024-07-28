@@ -6,14 +6,10 @@ import { UsersComponent } from './components/users/users.component';
 import { Component } from '@angular/core';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
-//import { DetailComponent } from './components/detail/detail.component';
+
 
 export const routes: Routes = [
-  {
-    path: "",
-    redirectTo:"home",
-    pathMatch:'full'
-  },
+
   {
     path: "home",
     title: "Home",
@@ -38,6 +34,11 @@ export const routes: Routes = [
     path: "todo/:id",
     title: "todo",
     component: TodoDetailComponent
+  },
+  {
+    path: "",
+    redirectTo:"home",
+    pathMatch:'full'
   },
   {
     path: "**",

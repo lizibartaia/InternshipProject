@@ -1,27 +1,16 @@
 
- <nav class="topnav" id="myTopnav">
-  <!-- <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Go Home</a> -->
-  <button mat-button routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Angular App</button>
-  <p>{{getFormattedDate()}}</p>
+<nav class="topnav" id="myTopnav">
+
+  <button mat-button routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" >Angular App</button>
+
+  <p>{{ formattedDate }}</p>
 
   <mat-toolbar>
-    <button mat-button routerLink="/posts" routerLinkActive="active-link">Posts</button>
-    <button mat-button routerLink="/users" routerLinkActive="active-link">Users</button>
+    <button mat-button routerLink="/posts" routerLinkActive="active-link" >Posts</button>
+    <button mat-button routerLink="/users" routerLinkActive="active-link" >Users</button>
   </mat-toolbar>
 </nav>
 <br>
-<!-- <nav class="topnav" >
-      <button  mat-tab-link mat-stroked-button  (click)="onPostClicked()"   routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >Posts</button>
-      <button mat-stroked-button  (click)="onUsersClicked()"   routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >Users</button>
-</nav> -->
 
 
-
-<!-- <mat-toolbar>
-  <button mat-button routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</button>
-  <button mat-button routerLink="/posts" routerLinkActive="active-link">Posts</button>
-  <button mat-button routerLink="/users" routerLinkActive="active-link">Users</button>
-</mat-toolbar> -->
-
-<!-- routerLink="/posts" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" -->
 
