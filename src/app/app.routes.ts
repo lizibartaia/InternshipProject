@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { Component } from '@angular/core';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
 //import { DetailComponent } from './components/detail/detail.component';
 
 export const routes: Routes = [
@@ -33,6 +34,11 @@ export const routes: Routes = [
     path: "detail/:id",
     title: "Details",
     component: PostDetailComponent
+  },
+  {
+    path: "todo/:id",
+    title: "todo",
+    component: TodoDetailComponent
   },
   {
     path: "**",

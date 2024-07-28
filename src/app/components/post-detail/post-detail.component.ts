@@ -5,19 +5,19 @@ import { Observable } from 'rxjs';
 import { IPost } from '../../interfaces/ipost';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
+
 
 @Component({
   selector: 'app-post-detail',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatChipsModule],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss'
 })
 export class PostDetailComponent {
 
   userId!:number;
-  userPost$!:Observable<IPost[]>
+  userPost$!:Observable<IPost[]>;
 
   constructor(private ListService: ListService,private activatedRoute: ActivatedRoute) {
 

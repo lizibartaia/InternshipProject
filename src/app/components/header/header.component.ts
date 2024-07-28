@@ -2,21 +2,30 @@ import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, MatButtonModule],
+  providers: [DatePipe],
+  imports: [RouterLink, RouterLinkActive,MatDatepickerModule, MatNativeDateModule, MatFormFieldModule,MatInputModule, MatButtonModule, MatToolbarModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
-  datePipe: DatePipe = new DatePipe('en-US');
+  datePipes: DatePipe = new DatePipe('en-US');
 
-  constructor(private router: Router){}
 
-  getFormattedDate(){
+  constructor(private router: Router, private datePipe: DatePipe){
+
+  }
+
+    getFormattedDate(){
 
     var date = new Date();
     var transformDate = this.datePipe.transform(date, 'yyyy-MM-dd, h:mm:ss a');
@@ -34,4 +43,31 @@ export class HeaderComponent {
 
   }
 
-}
+
+
+
+
+
+
+
+  }
+
+  // getFormattedDate(){
+
+  //   var date = new Date();
+  //   var transformDate = this.datePipe.transform(date, 'yyyy-MM-dd, h:mm:ss a');
+  //   return transformDate;
+
+  // }
+
+  // onPostClicked(){
+  //   this.router.navigate(['/posts']);
+
+  // }
+
+  // onUsersClicked(){
+  //   this.router.navigate(['/users']);
+
+  // }
+
+
