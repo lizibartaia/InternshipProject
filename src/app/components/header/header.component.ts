@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +23,16 @@ export class HeaderComponent {
 
   constructor(private router: Router, private datePipe: DatePipe){
 
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        console.log('NavigationEnd:', event);
+      } else {
+        console.log('Router event:', event);
+      }
+    });
   }
 
     getFormattedDate(){

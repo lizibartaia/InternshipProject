@@ -35,16 +35,20 @@ export class PostsComponent {
 
   posts$!: Observable<IPost[]>;
   post$!:Observable<IPost>
-  displayedColumns: string[] = ['userId','id', 'title', 'body', 'detail'];
+  displayedColumns: string[] = ['username','id', 'title', 'body', 'detail'];
 
   constructor(private ListService: ListService){}
 
   ngOnInit(){
-    this.posts$ = this.ListService.getPosts();
-    this.posts$.subscribe((res)=>{
-      console.log(res);
-    })
+    // this.posts$ = this.ListService.getPosts();
+    // this.posts$.subscribe((res)=>{
+    //   console.log(res);
+    // })
 
+    this.posts$ = this.ListService.getPostsWithUsernames();
+    this.posts$.subscribe((res) => {
+      console.log(res);
+    });
   }
 
 

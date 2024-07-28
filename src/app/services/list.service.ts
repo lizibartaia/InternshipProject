@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IPost } from '../interfaces/ipost';
 import { IUser } from '../interfaces/iuser';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, forkJoin, map } from 'rxjs';
 import { ITodo } from '../interfaces/itodo';
 
 @Injectable({
@@ -33,6 +33,17 @@ export class ListService {
 
   getUserTodo(userId: number): Observable<ITodo[]> {
     return this.http.get<ITodo[]>(this.apiURL+ '/todos?userId=' + userId)
+  }
+
+  getPostsWithUsernames(): Observable<IPost[]> {
+    return forkJoin([this.getPosts(), this.getUsers()]).pipe(
+      map(([posts, users]) => {
+        return posts.map(post => {
+          const user = users.find(u => u.id === post.userId);
+          return { ...post, username: user ? user.username : 'Unknown' };
+        });
+      })
+    );
   }
 
 

@@ -2,9 +2,9 @@
 <div class="mat-elevation-z8">
   <table *ngIf="posts$ | async as posts" [dataSource]="posts" mat-table matSort>
 
-  <ng-container matColumnDef="userId">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header="userId"> UserId </th>
-    <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="username"> Username </th>
+    <td mat-cell *matCellDef="let element"> {{element.username}} </td>
   </ng-container>
 
   <ng-container matColumnDef="id">

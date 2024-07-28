@@ -15,6 +15,11 @@ export const routes: Routes = [
     pathMatch:'full'
   },
   {
+    path: "home",
+    title: "Home",
+    component: HomeComponent
+  },
+  {
     path: "posts",
     title: "Posts",
     component: PostsComponent
@@ -24,12 +29,6 @@ export const routes: Routes = [
     title: "Users",
     component: UsersComponent
   },
-  {
-    path: "home",
-    title: "Home",
-    component: HomeComponent
-  },
-
   {
     path: "detail/:id",
     title: "Details",
